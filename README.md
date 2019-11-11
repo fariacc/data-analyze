@@ -4,6 +4,6 @@ New version of the SAMM application, developed entirely in VueJS inside a single
 
 To run this application, download it or clone it and then:
 
-npm install
+1) npm install
 
-npm run dev
+2) npm run dev
