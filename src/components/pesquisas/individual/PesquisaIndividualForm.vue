@@ -207,7 +207,7 @@
         this.requisicaoListagem(request)
       },
       requisicaoListagem(request){
-        this.$http.post('https://samm.bankscore.com.br/rest/api/new/prospect', request, {
+        this.$http.post('https://linkapi', request, {
           headers: {
             'Content-Type': 'application/json'
           }

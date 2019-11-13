@@ -89,22 +89,8 @@
         this.requisicaoGraficos(request)
       },
       requisicaoGraficos(request){
-        this.$http.post('https://samm.bankscore.com.br/rest/api/new/chart', request, {//resultados dos gráficos
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => {
-          this.dadosGrafico = response.data.data
-        })
-        this.$http.post('https://samm.bankscore.com.br/rest/api/new/count', request, {//total de resultados
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => {
-          this.count = response.data.data.total
-        })
+        this.dadosGrafico = response.data.data
+        this.count = '53.000.964'
       }
     },
     mounted(){

@@ -137,7 +137,7 @@
         }
       },
       requisicaoGraficos(request){
-        this.$http.post('https://samm.bankscore.com.br/rest/api/new/chart', request, {//resultados dos gráficos
+        this.$http.post('https://linkapi', request, {//resultados dos gráficos
           headers: {
             'Content-Type': 'application/json'
           }
@@ -145,7 +145,7 @@
         .then(response => {
           this.$emit('enviarInfoGrafico', response.data.data, request)
         })
-        this.$http.post('https://samm.bankscore.com.br/rest/api/new/count', request, {//total de resultados
+        this.$http.post('https://linkapi', request, {//total de resultados
           headers: {
             'Content-Type': 'application/json'
           }
@@ -154,7 +154,7 @@
           this.$emit('enviarCount', response.data.data.total)
         })
         //requisicao para checar se algum parametro está sendo enviado
-        this.$http.post('https://samm.bankscore.com.br/rest/api/new/validRequest', request, {
+        this.$http.post('https://linkapi', request, {
           headers: {
             'Content-Type': 'application/json'
           }

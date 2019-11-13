@@ -4,15 +4,17 @@
     <p class="fs-title text-right mb-3">PIB do estado</p>
     <p class="numero-estado text-right mb-0">{{formatPercent(infoEmpresas[0].pibNacional)}}%</p>
     <p class="fs-title text-right">Participação no PIB nacional</p>
-    <cards-estados class="p-0 pt-3" :cards="cardsEmpresas"></cards-estados>
+    <div class="card-estados">
+      <card-dashboard class="row p-0 pt-3" :cards="cardsEmpresas"></card-dashboard>
+    </div>
   </div>
 </template>
 
 <script>
-  import CardsEstados from '../CardsEstados.vue'
+  import CardDashboard from '../../../shared/utils/CardDashboard.vue'
   export default {
     name: 'opcao-empresas',
-    components: { CardsEstados },
+    components: { CardDashboard },
     data(){
       return{
         infoEmpresas: [

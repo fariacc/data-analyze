@@ -14,7 +14,16 @@
         secao: 'usuarios',
         usuarios: [
           {
-            pagination: { rowsPerPage: 5 }, buscar: true, itens: [ ],
+            pagination: { rowsPerPage: 5 }, buscar: true,
+            itens: [
+              { nome: 'Carla', idUser: 1, email: 'carla@data-analyzer.com', username: 'carla' },
+              { nome: 'Maria', idUser: 2, email: 'maria@data-analyzer.com', username: 'maria' },
+              { nome: 'João', idUser: 3, email: 'joao@data-analyzer.com', username: 'joao' },
+              { nome: 'Mateus', idUser: 4, email: 'mateus@data-analyzer.com', username: 'mateus' },
+              { nome: 'Elena', idUser: 5, email: 'elena@data-analyzer.com', username: 'elena' },
+              { nome: 'Lucas', idUser: 6, email: 'lucas@data-analyzer.com', username: 'lucas' },
+              { nome: 'Miguel', idUser: 7, email: 'miguel@data-analyzer.com', username: 'miguel' },
+            ],
             headers: [
               { campo: 'Nome', value: 'nome' }, { campo: 'ID', value: 'idUser' },
               { campo: 'Usuário', value: 'username' }, { campo: 'E-mail', value: 'email' },
@@ -29,34 +38,11 @@
       },
       excluirUsuarioModal(usuarioInfo){
         this.$emit('excluirUsuarioModal', usuarioInfo)
-      },
-      requisicaoUsuarios(usuario){
-        var request = {
-          idCompany: usuario.idCompany,
-          token: this.token
-        }
-        this.$http.post('https://samm.bankscore.com.br/rest/api/getAllCompanyUsers', request, {//resultados dos gráficos
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => {
-          if (this.usuarios[0].itens.length < response.data.users.length) {
-            this.usuarios[0].itens = []
-            for (var i = 0; i < response.data.users.length; i++) {
-              this.usuarios[0].itens.push({
-                nome: response.data.users[i].name, idUser: response.data.users[i].idUser,
-                email: response.data.users[i].username, username: response.data.users[i].email
-              })
-            }
-            this.$refs.listagem.pages()
-          }
-        })
       }
     },
     watch:{
       dadosUsuario(){
-        this.requisicaoUsuarios(this.dadosUsuario)
+        this.$refs.listagem.pages()
       }
     }
   }

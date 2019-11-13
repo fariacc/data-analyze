@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+  <div class="col-sm-12 col-md-12 col-lg-6 text-center">
     <grafico-component classedivlinha="mr-auto grafico mt-1" :data="dataGrafico" :dataGrafico="dataGrafico"></grafico-component>
   </div>
 </template>
@@ -12,7 +12,8 @@
     data(){
       return{
         dataGrafico: [
-          { width: '100%', height: '435', type: 'maps/brazil', dataFormat: 'json',
+          {
+            width: '100%', height: '100%', type: 'maps/usa', dataFormat: 'json',
             dataSource: {
               "chart": {
                 "showLegend": true,
@@ -29,37 +30,45 @@
                 "minValue": "0",
                 "startLabel": "Menor quantidade",
                 "endLabel": "Maior quantidade",
-                "code": "F2726F",
+                "gradient": "1",
+                "code": "#F2726F",
                 "color": [
-                  {"maxValue": "2500", "code": "F8BD19"}, {"maxValue": "5000", "code": "00B20E"}
+                  { "minValue": "0", "maxValue": "50", "color": "#F8BD19"},
+                  { "minValue": "51", "maxValue": "100", "color": "#00B20E"}
                 ]
               },
               "data": [
-                { "id":"001","value": 2834 }, { "id":"002","value": 3182 }, { "id":"003","value": 3280 },
-                { "id":"004","value": 911 }, { "id":"005","value": 292 }, { "id":"006","value": 530 },
-                { "id":"007","value": 2515 }, { "id":"008","value": 728 }, { "id":"009","value": 1974 },
-                { "id":"010","value": 848 }, { "id":"011","value": 3278 }, { "id":"012","value": 4463 },
-                { "id":"013","value": 1198 }, { "id":"014","value": 378 }, { "id":"015","value": 2610 },
-                { "id":"016","value": 1200 }, { "id":"017","value": 3820 }, { "id":"018","value": 940 },
-                { "id":"019","value": 2834}, { "id":"020","value": 3182 }, { "id":"021","value": 3280 },
-                { "id":"022","value": 911 }, { "id":"023","value": 292 }, { "id":"024","value": 530 },
-                { "id":"025","value": 2515 }, { "id":"026","value": 728 }, { "id":"027","value": 1974 }
+                { "id": "AK", "value": "26.6" }, { "id": "DC", "value": "52.3" },
+                { "id": "MD", "value": "54.2" }, { "id": "DE", "value": "55.3" },
+                { "id": "RI", "value": "50.1" }, { "id": "WA", "value": "48.3" },
+                { "id": "OR", "value": "48.4" }, { "id": "CA", "value": "59.4" },
+                { "id": "ID", "value": "44.4" }, { "id": "NV", "value": "49.9" },
+                { "id": "AZ", "value": "60.3" }, { "id": "MT", "value": "42.7" },
+                { "id": "WY", "value": "42.0" }, { "id": "UT", "value": "48.6" },
+                { "id": "CO", "value": "45.1" }, { "id": "NM", "value": "53.4" },
+                { "id": "ND", "value": "40.4" }, { "id": "SD", "value": "45.2" },
+                { "id": "NE", "value": "48.8" }, { "id": "KS", "value": "54.3" },
+                { "id": "OK", "value": "59.6" }, { "id": "TX", "value": "64.8" },
+                { "id": "MN", "value": "41.2" }, { "id": "IA", "value": "47.8" },
+                { "id": "MO", "value": "54.5" }, { "id": "AR", "value": "60.4" },
+                { "id": "LA", "value": "66.4" }, { "id": "WI", "value": "43.1" },
+                { "id": "IL", "value": "51.8" }, { "id": "KY", "value": "55.6" },
+                { "id": "TN", "value": "57.6" }, { "id": "MS", "value": "63.4" },
+                { "id": "AL", "value": "62.8" }, { "id": "GA", "value": "63.5" },
+                { "id": "MI", "value": "44.4" }, { "id": "IN", "value": "51.7" },
+                { "id": "OH", "value": "50.7" }, { "id": "PA", "value": "48.8" },
+                { "id": "NY", "value": "45.4" }, { "id": "VT", "value": "42.9" },
+                { "id": "NH", "value": "43.8" }, { "id": "ME", "value": "41.0" },
+                { "id": "MA", "value": "47.9" }, { "id": "CT", "value": "49.0" },
+                { "id": "NJ", "value": "52.7" }, { "id": "WV", "value": "51.8" },
+                { "id": "VA", "value": "55.1" }, { "id": "NC", "value": "59.0" },
+                { "id": "SC", "value": "62.4" }, { "id": "FL", "value": "70.7" }
               ]
             },
             events: {
               entityClick(evt, data) {
                 document.getElementById('nomeEstado').innerHTML = data.shortLabel + ' - ' + data.label
                 document.getElementById('numeroConsumidores').innerHTML = data.value
-                // if (dash.__vue__.section === 'consumer') {
-                //   consumer.__vue__.setUfName(dataObj.label);
-                // }
-                // if (dash.__vue__.section === 'companies') {
-                //   company.__vue__.setUfName(dataObj.label);
-                // }
-                // if (dash.__vue__.section === 'veicheler') {
-                //   vehicles.__vue__.setUfName(dataObj.label);
-                // }
-                // dash.__vue__.getStates(dataObj.id);
               }
             }
           }

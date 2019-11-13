@@ -41,7 +41,7 @@
         var token = this.$route.query.t
         if ((this.inputs[0].value == this.inputs[1].value) && this.inputs[0].value != null && this.inputs[1].value != null) {
           this.msgValidacao = ''
-          this.$http.post('https://samm.bankscore.com.br/rest/api/resetarSenha', { //aqui põe a url da API
+          this.$http.post('https://linkapi', { //aqui põe a url da API
             novaSenha: this.inputs[0].value,
             token: token
           })

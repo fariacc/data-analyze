@@ -18,18 +18,7 @@
     props: { usuarioInfo: Object, token: String },
     methods: {
       excluirUsuario(){
-        var data = {
-          idUser: this.usuarioInfo.idUser,
-          token: this.token
-        }
-        this.$http.post('https://samm.bankscore.com.br/rest/api/deleteUser', data, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => {
-          alert(response.data.message);
-        })
+        alert('Usuário deletado');
         this.$emit('closeModal', false)
       }
     }

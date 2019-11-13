@@ -49,7 +49,7 @@
       },
       recuperarSenha (event){
         if (this.validEmail(this.inputs[0].value)) {
-          axios.post('https://samm.bankscore.com.br/rest/api/sendResetLink', { //aqui põe a url da API
+          axios.post('https://linkapi', { //aqui põe a url da API
             email: this.inputs[0].value,
           })
           .then(response => {

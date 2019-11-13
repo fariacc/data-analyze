@@ -11,14 +11,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import money from 'v-money'
 import FBSignInButton from 'vue-facebook-signin-button'
 import GSignInButton from 'vue-google-signin-button'
-// import VueFusionCharts from 'vue-fusioncharts'
+import VueFusionCharts from 'vue-fusioncharts'
 import FusionCharts from 'fusioncharts'
-import Charts from 'fusioncharts/fusioncharts.charts'
-import { FCComponent } from "vue-fusioncharts";
-// import FusionMaps from 'fusioncharts/fusioncharts.maps'
-// import Brazil from 'fusionmaps/maps/fusioncharts.brazil'
-import AngularGauge from 'fusioncharts/fusioncharts.widgets'
+import Column2D from 'fusioncharts/fusioncharts.charts'
+import Maps from 'fusioncharts/fusioncharts.maps'
+import Usa from 'fusioncharts/maps/fusioncharts.usa'
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion'
+import AngularGauge from 'fusioncharts/fusioncharts.widgets'
 import VueNumeric from 'vue-numeric'
 import Vuetify from 'vuetify'
 import * as VueGoogleMaps from 'vue2-google-maps'
@@ -37,8 +36,7 @@ Vue.use(BootstrapVue)
 Vue.use(money, { precision: 4 })
 Vue.use(FBSignInButton)
 Vue.use(GSignInButton)
-// Vue.use(VueFusionCharts, FusionCharts, AngularGauge, Charts, FusionTheme, FusionMaps, Brazil)
-Charts(FusionCharts)
+Vue.use(VueFusionCharts, FusionCharts, Maps, Column2D, FusionTheme, Usa)
 Vue.use(VueNumeric)
 Vue.use(Vuetify)
 Vue.use(VueGoogleMaps, {

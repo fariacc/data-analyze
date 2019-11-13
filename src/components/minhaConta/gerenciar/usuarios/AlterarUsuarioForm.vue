@@ -66,47 +66,18 @@
         }
       },
       mostrarDadosUsuarios(){//dados já cadastrados do usuário
-        var data = {
-          idUser: this.usuarioInfo.idUser,
-          token: this.token
-        }
-        this.$http.post('https://samm.bankscore.com.br/rest/api/getUserById', data, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => {
-          this.inputs[0].value = response.data.user.name,
-          this.inputs[1].value = response.data.user.documento,
-          this.inputs[2].value = response.data.user.email,
-          this.inputs[3].value = response.data.user.telefone,
-          this.inputs[4].value = response.data.user.idUserPermission,
-          this.inputs[5].value = response.data.user.boleto
-        })
+        this.inputs[0].value = 'Username',
+        this.inputs[1].value = '123.456.789.01',
+        this.inputs[2].value = 'user@data-analyzer.com',
+        this.inputs[3].value = '+55 41 1 2345-6789',
+        this.inputs[4].value = 2,
+        this.inputs[5].value = 1
       },
       alterarUsuario(){
         if (this.inputs[0].value != null && CPF.validate(this.inputs[1].value) && this.validEmail(this.inputs[2].value, event)
           && this.inputs[3].value.length >= 10 && this.inputs[4].value != null && this.inputs[5].value != null) {
-          var data = {
-            idUser: this.usuarioInfo.idUser,
-            name: this.inputs[0].value,
-            documento: this.inputs[1].value,
-            email: this.inputs[2].value,
-            telefone: this.inputs[3].value,
-            permission: this.inputs[4].value,
-            boleto: this.inputs[5].value,
-            idCompany: this.dadosUsuario.idCompany,
-            instrucoes: 1
-          }
-          this.$http.post('https://samm.bankscore.com.br/rest/api/updateUser', data, {
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          })
-          .then(response => {
-            alert(response.data.message)
-            this.msgValidacao = ''
-          })
+          alert('Seus dados foram alterados')
+          this.msgValidacao = ''
         }
         else{
           this.msgValidacao = 'Preencha todos os campos corretamente'

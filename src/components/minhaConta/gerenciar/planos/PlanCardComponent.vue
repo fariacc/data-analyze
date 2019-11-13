@@ -4,7 +4,7 @@
       <div class="col-sm-6 col-md-12 col-lg-12 px-0 text-center">
         <div class="list-group-item box-shadow px-1 mb-2" v-for="(plano, key) in planos" :key="plano.index">
           <h4 class="card-subtitle text-center">
-            <strong>SAMM</strong><strong :style="plano.cor"> {{ plano.nome }}*</strong>
+            <strong>Analyzer</strong><strong :style="plano.cor"> {{ plano.nome }}*</strong>
           </h4>
           <p class="mb-2 text-center">
             Direito a até <strong>{{ plano.resultados }} mil</strong> resultados ao mês

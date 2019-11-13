@@ -71,29 +71,9 @@
       },
       criarUsuario(){
         if (this.inputs[0].value != null && this.inputs[1].value != null && CPF.validate(this.inputs[2].value) &&
-          this.validEmail(this.inputs[3].value, event) && this.inputs[4].value.length >= 10 && this.inputs[5].value != null &&
-          this.inputs[6].value != null && this.inputs[7].value == this.inputs[8].value) {
-          var data = {
-            name: this.inputs[0].value,
-            username: this.inputs[1].value,
-            documento: this.inputs[2].value,
-            email: this.inputs[3].value,
-            telefone: this.inputs[4].value,
-            permission: this.inputs[5].value,
-            boleto: this.inputs[6].value,
-            password: this.inputs[7].value,
-            idCompany: this.dadosUsuario.idCompany,
-            instrucoes: 1,
-            token: this.token
-          }
-          this.$http.post('https://samm.bankscore.com.br/rest/api/createUser', data, {
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          })
-          .then(response => {
-            alert(response.data.message)
-          })
+        this.validEmail(this.inputs[3].value, event) && this.inputs[4].value.length >= 10 && this.inputs[5].value != null &&
+        this.inputs[6].value != null && this.inputs[7].value == this.inputs[8].value) {
+          alert('Usuário criado')
         }
         else{
           this.msgValidacao = 'Preencha todos os campos corretamente'

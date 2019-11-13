@@ -70,7 +70,7 @@
         this.requisicaoReport(request)
       },
       requisicaoReport(request){ //requisicao para pegar os dados da listagem lateral
-        this.$http.post('https://samm.bankscore.com.br/rest/api/new/report', request, {
+        this.$http.post('https://linkapi', request, {
           headers: { 'Content-Type': 'application/json' }
         })
         .then(response => {

@@ -56,7 +56,7 @@
         this.showModal = showModal
       },
       requisicaoLeads(request, parametrosAnterioresGraficos){
-        this.$http.post('https://samm.bankscore.com.br/rest/api/new/prospect', request, {
+        this.$http.post('https://linkapi', request, {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -100,7 +100,7 @@
           tipoPesquisa: this.requisicaoGraficos.tipoPesquisa,
           token: this.requisicaoGraficos.token
         }
-        this.$http.post('https://samm.bankscore.com.br/rest/api/new/prospect', request, {
+        this.$http.post('https://linkapi', request, {
           headers: {
             'Content-Type': 'application/json'
           }

@@ -31,7 +31,9 @@
 <style lang="scss">
   .dashboard{
     background-color: #ececec;
-    width: 100%;
-    height: 100vh;
+    // min-width: 100vw;
+    // max-width: 100%;
+    // min-height: 100vh;
+    // max-height: 100%;
   }
 </style>

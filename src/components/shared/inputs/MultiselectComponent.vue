@@ -10,18 +10,6 @@
         </span>
       </template>
     </multiselect>
-    <!-- <ul class="resources-list" v-if="input.label == 'Profissão' || input.label == 'Área de atuação'">
-      <template v-for="(resource, index) in input.value">
-        <li class="resource-item" :data-index="index">
-          <div class="resource-title" :id="index">
-            <span>{{ resource }}</span>
-          </div>
-          <div class="delete-controls" v-on:click.prevent="removeDependency(index)">
-            <i class="fa fa-times fa-fw"></i>
-          </div>
-        </li>
-      </template>
-    </ul> -->
   </div>
 </template>
 
@@ -47,7 +35,7 @@
         else{
           var data = { catalogType: this.input.catalog, token: this.token }
         }
-        this.$http.post('https://samm.bankscore.com.br/rest/api/catalog', data, {
+        this.$http.post('https://linkapi', data, {
           headers: {
             'Content-Type': 'application/json'
           }

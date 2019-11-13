@@ -83,9 +83,10 @@
     }
   }
   .v-table__overflow{
-    width: 100.1%;
+    // width: 100.1%;
     table.v-table{
       -webkit-print-color-adjust: exact;
+      width: 100%;
       thead{
         tr{
           height: 3.8vh;

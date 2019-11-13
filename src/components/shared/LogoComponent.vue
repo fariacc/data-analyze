@@ -21,11 +21,11 @@
   }
   img {
     &.brand{
-      width: 25vw;
+      width: 15vw;
       padding: 0.6em;
     }
     &.logo{
-      width: 12vw;
+      width: 42vw;
       padding: 0.4em;
     }
   }

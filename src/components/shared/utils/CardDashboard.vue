@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card-dashboard">
     <div :class="card.classe" v-for="(card, key) in cards">
       <div class="info-box box-shadow" @click="selecionarOpcao(card.nome)">
         <span class="info-box-icon" :style="card.cor">
@@ -37,32 +37,34 @@
 </script>
 
 <style lang="scss">
-  .info-box{
-    min-height: 90px;
-    background: #fff;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-bottom: 1vh;
-    .info-box-icon{
-      float: left;
-      width: 90px;
-      text-align: center;
-      font-size: 3rem;
-      line-height: 90px;
-      background: rgba(0,0,0,0.2);
-    }
-    .info-box-content{
-      padding: 20px 10px;
-      margin-bottom: 2vh;
-      .info-box-text{
-        text-transform: uppercase;
-        color: #213345;
+  .card-dashboard{
+    .info-box{
+      min-height: 90px;
+      background: #fff;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-bottom: 1vh;
+      .info-box-icon{
+        float: left;
+        width: 90px;
+        text-align: center;
+        font-size: 3rem;
+        line-height: 98px;
+        background: rgba(0,0,0,0.2);
       }
-      .info-box-number{
-        display: block;
-        font-weight: bold;
-        font-size: 1.4rem;
-        color: #213345;
+      .info-box-content{
+        padding: 20px 10px;
+        margin-bottom: 2vh;
+        .info-box-text{
+          text-transform: uppercase;
+          color: #213345;
+        }
+        .info-box-number{
+          display: block;
+          font-weight: bold;
+          font-size: 1.4rem;
+          color: #213345;
+        }
       }
     }
   }
