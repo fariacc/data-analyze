@@ -2,7 +2,7 @@
 
 Application that analyzes data and shows it in a visual way. Developed entirely in VueJS inside a single page application. For this project I also used HTML, CSS (Bootstrap and SASS preprocessor), Vuetify and other libraries such as FusionCharts.
 
-[Check the application running](http://data-analyze.herokuapp.com/)
+[Check the application running](https://data-analyzer.now.sh/)
 
 ## Project setup
 
